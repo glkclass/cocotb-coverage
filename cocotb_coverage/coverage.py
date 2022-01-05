@@ -415,6 +415,19 @@ class CoverItem(object):
         """
         return self._at_least
 
+    @property
+    def covered_bins(self):
+        try:
+            return self._covered_bins
+        except AttributeError:
+            return None
+
+    @property
+    def bin_cnt(self):
+        try:
+            return self._bin_cnt
+        except AttributeError:
+            return None
 
 class CoverPoint(CoverItem):
     """Class used to create coverage points as decorators.
