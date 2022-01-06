@@ -490,7 +490,7 @@ class CoverPoint(CoverItem):
         if name in coverage_db:
             return coverage_db[name]
         else:
-            return super(CoverPoint, cls).__new__(CoverPoint)
+            return super(CoverPoint, cls).__new__(cls)
 
     def __init__(self, name, vname=None, xf=None, rel=None, bins=[],
                  bins_labels=None, weight=1, at_least=1, inj=True):
@@ -673,7 +673,7 @@ class CoverCross(CoverItem):
         if name in coverage_db:
             return coverage_db[name]
         else:
-            return super(CoverCross, cls).__new__(CoverCross)
+            return super(CoverCross, cls).__new__(cls)
 
     def __init__(self, name, items=[], ign_bins=[], weight=1, at_least=1):
         if not name in coverage_db:
